@@ -1,0 +1,16 @@
+<section>
+    <div class="create-timer">
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Task</mat-label>
+            <input matInput type="text" [(ngModel)]="clockTask">
+        </mat-form-field>
+        <button mat-raised-button [disabled]="clockTask===''" color="primary" (click)="createClock()">Add Clock</button>
+    </div>
+    <div class="timer-list-container">
+        <div class="timer-list">
+            <div class="timer" *ngFor="let clock of clocks">
+                <app-clock [task]="clock.task"></app-clock>
+            </div>
+        </div>
+    </div>
+</section>
